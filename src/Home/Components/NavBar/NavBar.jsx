@@ -79,7 +79,7 @@ const NavBar = ({ cartSize, wishSize }) => {
             type="text"
             className="search-input"
             placeholder="Search Items..."
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => setQuery(e.target.value.toLowerCase())}
             onKeyUp={searchQueryHandler}
           />
           <Link to={`/search/${query}`} className="search-btn">
