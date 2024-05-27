@@ -25,8 +25,6 @@ const NavBar = ({ cartSize, wishSize }) => {
     }
   };
 
-  const { signOut } = useClerk();
-
   const handleClick = () => {
     const mobileBtn = document.querySelector(".mobile-nav");
 

@@ -1,5 +1,5 @@
 import { SignIn } from "@clerk/clerk-react"
-import signInImg from '../Assets/signIn.jpg'
+
 
 import '../CSS/Sign-in.css'
 

@@ -20,16 +20,16 @@ const DetailsInfo = () => {
     <section className="details-tab">
         <div className="detail-tabs">
           <span className={`detail-tab ${
-            activeTab == 'show' ? "active-tab" : ""}`}
+            activeTab === 'show' ? "active-tab" : ""}`}
         onClick={() => setActiveTab('show')} >Additional Info</span>
           <span className={`detail-tab ${
-            activeTab == 'show' ? "" : "active-tab"}`} onClick={() => setActiveTab('hide')} >Reviews (3)</span>
+            activeTab === 'show' ? "" : "active-tab"}`} onClick={() => setActiveTab('hide')} >Reviews (3)</span>
         </div>
 
         <div className="details-tabs-content">
           <div className="details-tab-content">
        
-            <table className={`info-table ${activeTab == 'show' ? "" : "tab-hide"}`}>
+            <table className={`info-table ${activeTab === 'show' ? "" : "tab-hide"}`}>
               <tbody><tr>
                 <th>Style</th>
                 <td>Leather Jacket</td>

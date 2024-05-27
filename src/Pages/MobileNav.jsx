@@ -1,8 +1,7 @@
 import React from 'react'
 
 import { Link, NavLink } from 'react-router-dom'
-import { SignedIn, SignedOut, UserButton, useClerk } from "@clerk/clerk-react";
-import { GoLaw } from 'react-icons/go';
+import { SignedIn, SignedOut, useClerk } from "@clerk/clerk-react";
 import { FaX } from 'react-icons/fa6';
 
 const MobileNav = () => {

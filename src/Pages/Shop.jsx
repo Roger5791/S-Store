@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React, {useState } from 'react'
+import { Link} from 'react-router-dom'
 
 import '../CSS/Shop.css'
 
@@ -67,8 +67,8 @@ const Shop = ({addToWishlist}) => {
           </Link>
 
 
-          <a className="action-btn" aria-label="Compare"><LuGitCompare />
-          </a>
+          <Link className="action-btn" aria-label="Compare"><LuGitCompare />
+          </Link>
 
         </div>
 

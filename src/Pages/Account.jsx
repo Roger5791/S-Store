@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 
 import '../CSS/Account.css'
 
 import { FaShoppingBag } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
-import { FaKey } from "react-icons/fa6";
+
 import { MdLogout } from "react-icons/md";
 import { MdDashboard } from "react-icons/md";
 import Dashboard from '../Account/Dashboard';
 import Profile from '../Account/Profile';
 import OrderItems from '../Account/OrderItems';
 import { useClerk, useUser } from '@clerk/clerk-react';
-import Security from '../Account/Security';
+
 
 
 

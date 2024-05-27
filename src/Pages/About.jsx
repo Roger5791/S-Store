@@ -33,9 +33,7 @@ import {
 } from "../Data/Data";
 
 const About = () => {
-  var video = document.querySelector(".popup-video");
-  var videoCon = document.querySelector(".i-vid");
-  var closeVid = document.querySelector("body");
+ 
 
   const [state, setState] = useState(true);
 
@@ -212,13 +210,13 @@ const About = () => {
                       </h3>
                       <span className="team-desig">{item.position}</span>
                       <div className="team-social">
-                        <a target="_blank" href="https://facebook.com/">
+                        <a target="_blank"  rel="noreferrer" href="https://facebook.com/">
                           <FaFacebook />
                         </a>
-                        <a target="_blank" href="https://twitter.com/">
+                        <a target="_blank"  rel="noreferrer" href="https://twitter.com/">
                           <FaTwitter />
                         </a>
-                        <a target="_blank" href="https://linkedin.com/">
+                        <a target="_blank"  rel="noreferrer" href="https://linkedin.com/">
                           <FaLinkedin />
                         </a>
                         <a target="_blank" href="https://instagram.com/">
@@ -289,7 +287,7 @@ const About = () => {
         </div>
 
         <div className={`i-vid ${state ? "i-vid-hide" : "iframe-show"}`}>
-          <iframe src="https://www.youtube.com/embed/2LCNqRj6tJU?si=B97p8x3vP4oTTMSD?&amp;mute=1"></iframe>
+          <iframe src="https://www.youtube.com/embed/2LCNqRj6tJU?si=B97p8x3vP4oTTMSD?&amp;mute=1"title="About-Video"></iframe>
           <button className="vid-close" onClick={changeState}>
             <FaXmark />
           </button>

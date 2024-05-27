@@ -18,7 +18,6 @@ import Cart from './Pages/Cart'
 import ScrollToTop from './Hooks/ScrollToTop/ScrollToTop';
 import Wishlist from './Pages/Wishlist';
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 
 

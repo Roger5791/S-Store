@@ -5,7 +5,7 @@ import ProductCard from '../Home/Components/ProductCard/ProductCard'
 import Featured from '../Home/Components/Featured/Featured'
 import Deals from '../Home/Components/Deals/Deals'
 import Showcase from '../Home/Components/Showcase/Showcase'
-import MobileNav from './MobileNav'
+
 
 
 

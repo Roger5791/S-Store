@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { productData } from '../../../Data/Data'
 import { Link } from 'react-router-dom'
 
-import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { LuGitCompare } from "react-icons/lu";
