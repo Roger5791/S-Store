@@ -1,0 +1,85 @@
+.shop-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem 4rem 2rem 2rem;
+}
+
+.shop-left {
+  flex-basis: 18%;
+  min-width: 18%;
+  border: 1px solid #aec8dd;
+  border-radius: 0.5rem;
+  height: 60vh;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+.shop-left h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.shop-left::-webkit-scrollbar {
+  width: 5px;
+}
+
+.shop-left::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.shop-left::-webkit-scrollbar-thumb {
+  background-color: crimson;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.shop-links {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  flex-direction: row;
+  column-gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.shop-links summary {
+  text-align: center;
+}
+
+.shop-left a {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid crimson;
+  color: black;
+}
+
+.shop-link-active,
+.shop-left a:hover {
+  background-color: crimson;
+  color: white;
+  border: 1px solid crimson;
+}
+
+.active,
+.nav-link:hover {
+  color: crimson;
+}
+
+/*======Media-Queries=========*/
+
+@media screen and (max-width: 1024px) {
+  .shop-wrapper {
+    gap: 2rem;
+  }
+
+  .shop-wrapper{
+    padding: 2rem;
+  }
+
+  .shop-left {
+    min-width: 30%;
+    flex-basis: 30%;
+  }
+}

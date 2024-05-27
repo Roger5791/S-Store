@@ -1,0 +1,61 @@
+.checkout-container {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.section-title {
+ 
+    margin-bottom: 1.5rem;
+}
+
+.order-table tr th, .order-table tr td {
+    border: 1px solid #659EB4;
+    padding: .5rem;
+    text-align: center;
+    color: black;
+}
+
+.checkout-group:nth-child(2) {
+    border: 1px solid #659EB4;
+    padding: 2rem;
+    border-radius: .5rem;
+}
+
+.payment-methods {
+    margin-block: 2.5rem 2.75rem;
+}
+
+.payment-option {
+    margin-bottom: 1rem;
+}
+.payment-title {
+    margin-bottom: 1rem;
+}
+
+.order-grandtotal, .table-title {
+    color: crimson !important;
+    font-weight: 700;
+}
+
+.order-img{
+    width: 70px;
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+    .checkout-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+
+@media screen and (max-width: 992px) {
+.checkout-group:nth-child(2) {
+    padding: .75rem;
+}
+
+}

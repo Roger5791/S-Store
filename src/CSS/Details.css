@@ -1,0 +1,562 @@
+.details-wrapper{
+    display: flex;
+    gap: 1.75rem;
+    padding: 2rem 4rem 2rem 2rem;
+}
+
+.img-section{
+   flex-basis: 40%;
+   min-width: 40%;
+}
+
+.product-images{
+    display: flex;
+    gap: 1rem;
+}
+
+
+.product-large-img{width: 400px; height: 400px;}
+.product-small-img{
+    width: 150px;
+    height: 350px;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    gap: .5rem ;
+    cursor: pointer;
+ 
+}
+
+.product-large-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: .35rem;
+    border: 1px solid rgb(165, 165, 165);
+}
+
+.product-small-img img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: .35rem;
+    
+   
+}
+
+.active-img-border{
+padding: .1rem;
+    border: 3px double black;
+}
+
+.product-small-img img:hover{
+    scale: 1.03;
+}
+
+
+.info-section{
+    width: 100%;
+}
+
+.info-section h2{
+    color: crimson;
+    font-size: 2rem;
+}
+
+.details-price{
+    border-top: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding-block: 1rem;
+    column-gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.details-price .new-price{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.details-price .old-price{
+    font-size: 1rem;
+}
+
+
+
+.short-description{
+    margin-block: 1rem 2rem;
+    line-height: 1.75rem;
+}
+
+.product-list{
+    padding: 0;
+}
+
+.list-item{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+
+}
+
+.list-item,
+.meta-list {
+    font-size: 1rem;
+    margin-bottom: .75rem;
+}
+
+.details-colors{
+    margin-top: 1.5rem;
+}
+
+.color-wrap{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.color-con{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.size-con{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.color-item, .size-item{
+    border: 1px solid rgb(167, 167, 167);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.color-item:hover, .size-item:hover{
+    background-color: crimson;
+    color: white;
+}
+
+.color-selected, .size-selected{
+    background-color: crimson;
+    color: white;
+}
+
+
+.detail-actions{
+    display: flex;
+    margin-top: 1.5rem;
+    gap :1rem    ;
+}
+
+.add-qnty{
+    width: 50px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: 0;
+    border: 1px solid rgb(167, 167, 167);
+}
+
+.add-cart-btn{
+    border: 0;
+    outline: 0;
+    padding: 0.85rem 1rem;
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+    border: 1px solid crimson;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.cart-added-btn{
+    border: 0;
+    outline: 0;
+    padding: 0.85rem 1rem;
+    background-color: rgb(3, 136, 14);
+    color: white;
+    cursor: pointer;
+    border: 1px solid rgb(1, 128, 12);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.cart-exist{
+    display: none;
+}
+
+.add-wishlist-btn{
+    padding: 0 .75rem;
+    font-size: 1.3rem;
+    line-height: .5rem;
+    background-color: white;
+    border: 1px solid rgb(167, 167, 167);
+    cursor: pointer;
+    color: rgb(78, 78, 78);
+    font-weight: 500;
+}
+
+.add-cart-btn:hover{
+    background-color: white;
+    color: crimson;
+    font-weight: 600;
+}
+
+.add-wishlist-btn:hover{
+    background-color: crimson;
+    color: white;
+}
+
+.details-meta{
+    border-top: 1px solid rgb(199, 199, 199);
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+}
+
+.details-meta p{
+    line-height: 1.5rem;
+    
+    font-size: .85rem;
+}
+
+.details-meta p span{
+    color: crimson;
+    font-weight: 500;
+    padding-left: .5rem;
+}
+
+.details-ads{
+    margin-top: 1rem;
+    border: 1px solid rgb(197, 197, 197);
+    display: flex;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    position: relative;
+}
+
+.ads-con{
+    margin-top: 2rem ;
+}
+
+.ad-title{
+    color: crimson;
+    font-weight: 500;
+    font-size: .85rem;
+}
+
+.ad-img{
+    width: 80px;
+    height: 80px;
+   
+}
+
+.ad-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.ad-rating{
+    color: coral;
+    margin: .25rem 0;
+    font-size: .75rem;
+}
+
+.ad-tag{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: crimson;
+    font-size: .75rem;
+    font-weight: 500;
+    margin: .35rem 0;
+}
+
+.ad-tag span{
+    background-color: crimson;
+    padding: .15rem .35rem;
+    color: white;
+    font-size: .75rem;
+}
+
+.ad-price{
+    display: inline-flex;
+    align-items: center;
+    margin: .15rem 0;
+    gap: .75rem;
+}
+
+.ad-sponsor{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    gap: .25rem;
+}
+
+.ad-sponsor p{
+    font-size: .75rem;
+    color: rgb(145, 145, 145);
+}
+
+.ad-sponsor span{
+    color:  rgb(145, 145, 145);
+    font-size: .85rem;
+}
+
+.price-new{
+    color: crimson;
+    font-weight: 500;
+    font-size: .85rem;
+}
+
+.price-old{
+    text-decoration: line-through;
+    color: rgb(82, 82, 82);
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+
+
+
+/*========== DETAILS INFO & REVIEW =========*/
+
+.details-tab{
+    padding: 2rem 4rem 0;
+}
+
+.detail-tabs{
+    display: flex;
+    column-gap: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.detail-tab{
+    font-size: 1rem;
+    font-weight: 500;
+    cursor:  pointer;
+    border-radius: .15rem;
+    padding: .625rem;
+    color: black;
+    
+    border: 1px solid crimson
+}
+
+
+
+.active-tab{
+   background-color: white;
+   color: white;
+   font-weight: 500;
+   background-color: crimson;
+   border: 1px solid crimson
+}
+
+
+.tab-hide{
+    display: none;
+}
+
+
+
+.info-table tr th,
+.info-table tr td{
+    border: 1px solid rgb(211, 211, 211);
+    padding: .625rem 1.25rem;
+
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table tr th{
+    font-weight: 500;
+    text-align: left;
+}
+
+.info-table tr td{
+    color: rgb(83, 83, 83)
+}
+
+.reviews-container{
+ padding-bottom: 3rem;
+}
+
+.review-single{
+    border-bottom: 1px solid rgb(211, 208, 208);
+    padding-bottom: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    column-gap: 1.5rem;
+}
+
+.review-single:not(:first-child){
+    padding-top: 1rem;
+}
+
+.review-img{
+    width: 70px;
+    border-radius: 50%;
+    margin-bottom: .5rem;
+}
+
+.review-title{
+    font-size: .75rem;
+}
+
+.review-data{
+    width: calc(100% - 94px);
+    color: black;
+}
+
+.review-description{
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+
+.review-rating{
+    color: crimson;
+    margin-bottom: .25rem;
+}
+
+.review-rating,
+.review-date{
+    font-size: .95rem;
+}
+
+.review-form-title{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.rate-product{
+    margin-bottom: 2rem;
+    color: coral;
+}
+
+.form{
+    display: grid;
+    row-gap: 1rem;
+}
+
+.form-group{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.textarea{
+    height: 200px;
+    padding-block: 1rem;
+    resize: none;
+}
+
+.form-btn .checkout-btn{
+width: auto;
+text-align: center;
+border-radius: .15rem;
+}
+
+.related-section{
+    padding: 0 4rem 0;
+}
+
+
+
+
+
+
+/*======Media-Queries=========*/
+
+@media screen and (max-width: 1024px) {
+
+    .related-section{
+        padding: 0 2rem;
+    }
+
+}
+
+
+@media screen and (max-width: 992px) {
+.details-wrapper, .details-tab{
+    padding: 2rem;
+}
+
+
+.details-ads{
+    gap: .5rem;
+    padding: .5rem;
+}
+
+
+.product-large-img{
+    height: 350px;
+}
+
+.ad-title, .ad-img{
+    margin-top: 1rem;
+}
+
+.related-section{
+    padding: 0 2rem;
+}
+
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .product-small-img{
+        height: 300px;
+    }
+
+    .product-large-img{
+        height: 300px;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 568px) {
+
+.details-wrapper{
+    flex-direction: column;
+    padding: 2rem;
+}
+
+
+
+.detail-actions{
+    justify-content: center;
+}
+
+
+
+.color-wrap{
+    flex-wrap: wrap;
+}
+
+.color-wrap p{
+    margin-bottom: .65rem;
+}
+
+.form{
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.form-group{
+    grid-template-columns: repeat(1, 1fr);
+}
+
+
+
+
+}

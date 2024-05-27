@@ -1,0 +1,103 @@
+.sign-in-con {
+  display: flex;
+}
+
+.sign-left {
+  background-image: url(/src/Assets/wcu-4.jpg);
+  flex-basis: 68%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sign-img {
+  width: 900px;
+  height: 90vh;
+}
+
+.sign-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.cl-internal-qk5yrq,
+.cl-internal-8bykxp {
+  box-shadow: none;
+}
+
+.cl-internal-1p733cp {
+  background-color: crimson;
+  border-radius: 0;
+}
+
+.cl-internal-qk5yrq {
+  border-radius: 0;
+}
+
+.cl-internal-4x6jej {
+  background: rgb(194, 194, 194);
+}
+
+.cl-internal-1tpvhd8 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.cl-internal-109vell {
+  background: white;
+  border: 1px solid white;
+  color: black;
+}
+
+.cl-internal-109vell:hover {
+  background-color: rgb(214, 214, 214);
+}
+
+.cl-internal-xexz24,
+.cl-internal-1c7fjmu {
+  color: white;
+}
+
+.cl-internal-1ftpdtb {
+  color: white;
+  background-color: white;
+}
+
+.cl-internal-13tc0wr,
+.cl-internal-j8ff2h {
+  color: white;
+}
+
+.cl-internal-1nuz2sv,
+.cl-internal-z0jvxn,
+.cl-internal-1vbkfwh {
+  color: rgb(212, 212, 212);
+}
+
+.cl-internal-rk8nkz,
+.cl-internal-1sany6l,
+.cl-internal-1v2koqu,
+.cl-internal-1r7rnyr {
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+}
+
+.cl-internal-kyvqj0 {
+  color: rgb(51, 51, 51);
+}
+
+/*======Media-Queries=========*/
+
+@media screen and (max-width: 992px) {
+  .sign-in-con {
+    padding: 0 2rem;
+    justify-content: center;
+  }
+
+  .sign-right {
+    width: fit-content;
+  }
+  .sign-left {
+    display: none;
+  }
+}

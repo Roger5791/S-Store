@@ -1,0 +1,135 @@
+.account-con {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: space-between;
+}
+
+.account-left {
+  min-width: 300px;
+  border: 1px solid #ededed;
+  height: fit-content;
+}
+
+.account-links {
+  padding: 0;
+}
+
+.account-left li {
+  padding: 0.75rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.account-left li:not(:last-child) {
+  border-bottom: 1px solid #ededed;
+}
+
+.account-left li:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.account-right {
+  border: 1px solid #ededed;
+}
+
+.account-title {
+  background-color: #ededed;
+  padding: 0.75rem;
+}
+
+.dash-info {
+  padding: 0.75rem;
+  line-height: 1.75rem;
+  font-size: 15px;
+}
+
+.dashboard,
+.profile {
+  display: none;
+}
+
+.acc-show {
+  display: block;
+}
+
+.active-acc {
+  background-color: crimson;
+  color: white;
+}
+
+.account-right {
+  width: 100%;
+}
+
+.order-info {
+  padding: 0.85rem;
+}
+
+.order-info th,
+td {
+  border: 1px solid #ededed;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.tab-body {
+  margin-top: 1rem;
+  padding: 0 1rem 1rem;
+}
+
+.profile-img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.dash-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.order-sec {
+  padding: 0.5rem;
+  border: 1px solid #ededed;
+  width: fit-content;
+  margin: 0.85rem;
+  text-align: center;
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+}
+
+.order-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: crimson;
+}
+
+@media screen and (max-width: 1024px) {
+  .account-con {
+    gap: 1rem;
+  }
+
+  .account-left {
+    min-width: 250px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .account-con {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .order-info {
+    overflow-x: scroll;
+    width: 100%;
+  }
+}

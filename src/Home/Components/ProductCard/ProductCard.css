@@ -1,0 +1,298 @@
+.product-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-evenly;
+}
+
+.product-item {
+  border: 1px solid rgb(174, 200, 221);
+  border-radius: 1.5rem;
+  transition: all 0.2s ease;
+  width: fit-content;
+  cursor: pointer;
+  height: fit-content;
+}
+
+.product-image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+}
+
+.product-img {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease;
+}
+
+.product-item:hover .product-img {
+  transform: scale(1.1);
+}
+
+.product-item:hover .product-title {
+  color: crimson;
+}
+
+.product-banner {
+  padding: 0.625rem 0.75rem 0.75rem;
+}
+
+.product-banner {
+  position: relative;
+}
+
+.product-img.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.product-actions {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  column-gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.wish-btn {
+  background-color: crimson !important;
+  color: white !important;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  line-height: 44px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid rgb(140, 157, 158);
+  color: black;
+  position: relative;
+}
+
+.action-btn::before,
+.action-btn::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+}
+
+.action-btn::before {
+  content: "";
+  top: -2px;
+  border: 0.5rem solid transparent;
+  border-top-color: crimson;
+}
+
+.action-btn::after {
+  content: attr(aria-label);
+  bottom: 100%;
+  background-color: crimson;
+  color: white;
+  font-size: 12px;
+  white-space: nowrap;
+  padding-inline: 0.625rem;
+  border-radius: 0.25rem;
+  line-height: 2.58;
+  font-weight: 500;
+}
+
+.product-badge {
+  position: absolute;
+  left: 1.25rem;
+  top: 1.25rem;
+  background-color: white;
+  color: white;
+  padding: 0.25rem 0.625rem;
+  height: fit-content;
+  border-radius: 2.5rem;
+  font-size: 12px;
+}
+
+.product-badge.light-red {
+  background-color: hsl(0, 96%, 56%);
+}
+.product-badge.light-blue {
+  background-color: hsl(236, 96%, 56%);
+}
+.product-badge.light-orange {
+  background-color: hsl(24, 100%, 73%);
+}
+.product-badge.light-green {
+  background-color: hsl(202, 53%, 76%);
+}
+
+.product-content {
+  padding: 0 1.25rem 1.125rem;
+  position: relative;
+}
+
+.product-category {
+  color: rgb(97, 97, 97);
+  font-size: 14px;
+}
+
+.product-title {
+  margin-block: 0.75rem 0.5rem;
+  color: black;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: hsl(24, 100%, 50%);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.cart-btn {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.5rem;
+  font-size: 16px;
+}
+
+.product-price {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.new-price {
+  color: crimson;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.old-price {
+  color: rgb(116, 115, 115);
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.product-img.hover,
+.product-actions,
+.action-btn::before,
+.action-btn::after,
+.product-item:hover .product-img.default {
+  opacity: 0;
+}
+
+.product-item:hover {
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+}
+
+.product-item:hover .product-img.hover,
+.product-item:hover .product-actions,
+.action-btn:hover::after,
+.action-btn:hover::before {
+  opacity: 1;
+}
+
+.action-btn:hover::after,
+.action-btn:hover::before {
+  transform: translateX(-50%) translateY(-0.5rem);
+}
+
+.action-btn:hover {
+  background-color: crimson;
+  border-color: crimson;
+  color: white;
+  cursor: pointer;
+}
+
+.filter-buttons {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  margin-bottom: 30px;
+}
+
+.filter-buttons button {
+  font-size: 17px;
+  border: 1px solid rgb(156, 206, 206);
+  text-transform: uppercase;
+  padding: 8px 10px;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.filter-buttons button:hover {
+  cursor: pointer;
+  background-color: crimson;
+  color: white;
+}
+
+.filter-buttons .active {
+  color: white;
+  background-color: crimson;
+}
+
+.featured-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.featured-con {
+  position: relative;
+}
+
+.wish-hide {
+  display: none;
+}
+
+.wish-show {
+  display: block;
+}
+
+/*=============Media Queries===============*/
+
+@media screen and (max-width: 992px) {
+  .trending-item {
+    width: 100%;
+  }
+
+  .product-image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .product-wrapper {
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .product-item {
+    width: 100%;
+  }
+
+  .product-image {
+    width: 100%;
+  }
+}

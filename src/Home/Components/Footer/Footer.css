@@ -1,0 +1,99 @@
+.footer-container {
+  display: grid;
+  grid-template-columns: 4.5fr repeat(2, 2fr) 3.5fr;
+  padding: 3rem 2.5rem 2rem;
+}
+
+.footer-sub {
+  color: black;
+  margin-block: 1.25rem 0.625rem;
+}
+
+.footer-description {
+  margin-bottom: 0.25rem;
+  color: rgb(107, 107, 107);
+  line-height: 1.75rem;
+}
+
+.footer-description span {
+  font-weight: 500;
+  color: black;
+}
+
+.footer-social .footer-sub {
+  margin-top: 1.875rem;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+}
+
+.footer-social-icon {
+  color: black;
+}
+
+.footer-social-icon:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+.footer-title {
+  font-size: 18px;
+  margin-block: 1rem 1.25rem;
+}
+
+.footer-links {
+  padding: 0;
+}
+
+.footer-link {
+  color: black;
+  font-size: 14px;
+  margin-bottom: 1rem;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: crimson;
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1.25rem;
+  border-top: 1px solid rgb(189, 189, 189);
+}
+
+.copyright,
+.designer {
+  color: rgb(88, 88, 88);
+  font-size: 14px;
+  padding: 0 2rem;
+}
+
+/*=============Media Queries===============*/
+
+@media screen and (max-width: 568px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+    width: 100%;
+    place-items: top;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.5rem;
+  }
+
+  .payment-img {
+    width: 150px;
+  }
+}
