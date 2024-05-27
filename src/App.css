@@ -39,10 +39,6 @@ li, a{
     padding: 2rem 4rem;
 }
 
-input{
-    text-transform: lowercase;
-}
-
 
 @media screen and (max-width: 1024px){
 
