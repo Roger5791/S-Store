@@ -3,7 +3,8 @@
 
 const express = require('express');
 const app = express();
-const stripe = require('stripe')('sk_test_51OxW2uSJ3iiAvjLzwlW7FuR4SaeI1GNWUmkoegGxk0yvr8v8QLSWHYseAqilseXo5aLAbqgsmI8oGkkUPPAfNTvc00qjdTH52J')
+const dotenv = require('dotenv').config()
+const stripe = require('stripe')(process.env.REACT_APP_STRIPE_SECRET_KEY)
 
 
 app.post('/create-checkout-session', async (req, res) => {
