@@ -3,7 +3,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import "../CSS/Checkout.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 const Checkout = ({ cartItem, setCartItem }) => {
   const [orders, setOrders] = useState([]);
@@ -48,18 +47,24 @@ const Checkout = ({ cartItem, setCartItem }) => {
     localStorage.removeItem("cartItems", JSON.stringify(cartItem));
     setLoading(true);
     console.log("redirectToCheckout");
+    
 
-    axios.post(`https://s-store-alpha.vercel.app/create-checkout-session`, {
-      cartItem,
-    })
-    .then((response) => {
-      if (response.data.url) {
-        window.location.href = response.data.url;
-      }
-    })
-    .catch((err) => console.log(err.message));
+    const stripe = await getStripe();
+    const { error } = await stripe.redirectToCheckout(checkoutOptions);
+    console.log("Stripe checkout error", error);
+
+    if (error) setStripeError(error.message);
+    setLoading(false);
+  };
+
+  if (stripeError) alert(stripeError);
+
+
+  function wait(time) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, time);
+    });
   }
-   
 
   
 
@@ -217,7 +222,10 @@ const Checkout = ({ cartItem, setCartItem }) => {
               <label className="payment-label">PayPal</label>
             </div>
           </div>
-      
+          <form
+            action="http://localhost:5001/create-checkout-session"
+            method="POST"
+          >
             <button
               type="submit"
               className="checkout-btn"
@@ -226,7 +234,7 @@ const Checkout = ({ cartItem, setCartItem }) => {
             >
               Place Order
             </button>
-          
+          </form>
         </div>
       </div>
     </section>
