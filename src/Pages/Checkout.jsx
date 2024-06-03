@@ -66,10 +66,10 @@ const Checkout = ({ cartItem, setCartItem }) => {
 
     const stripe = await getStripe();
     await stripe.redirectToCheckout({sessionId: data.id});
-    console.log("Stripe checkout error", error);
+    console.log("Stripe checkout error");
 
-    if (error) setStripeError(error.message);
-    setLoading(false);
+   /*  if (error) setStripeError(error.message);
+    setLoading(false); */
   };
 
   if (stripeError) alert(stripeError);
