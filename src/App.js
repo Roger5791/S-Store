@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import "@stripe/stripe-js";
 
 import './App.css'
 
@@ -27,6 +27,8 @@ import SearchResult from './Pages/SearchResult';
 import Checkout from './Pages/Checkout';
 import Account from './Pages/Account';
 import MobileNav from './Pages/MobileNav';
+import Success from './Pages/Success';
+import Cancel from './Pages/Cancel';
 
 
 
@@ -147,7 +149,9 @@ useEffect(() => {
       <Route path='account' element={<Account />} />
       <Route path='checkout' element={<Checkout addtocart={addtocart} cartItem={cartItem} setCartItem={setCartItem}  />} />
       <Route path='search/:query' element={<SearchResult addToWishlist={addToWishlist} setWishItem={setWishItem} wishItem={wishItem} />} />
-    </Routes>
+      <Route path='success' element={<Success />} />
+      <Route path='/cancel' element={<Cancel />} />
+      </Routes>
     <Newsletter />
     <Footer />
    </BrowserRouter>

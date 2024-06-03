@@ -102,7 +102,7 @@ const Cart = ({ cartItem, setCartItem }) => {
         </div>
       )}
 
-      <div className="cart-items">
+      <div className={`cart-items ${cartItem.length>0 ? 'border-right' : ''} `}>
         {cartItem.map((product) => {
           return (
             <div className="item-con" key={product.id}>

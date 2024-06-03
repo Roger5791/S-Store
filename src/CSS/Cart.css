@@ -6,8 +6,12 @@
 }
 
 .cart-items{
-    border-right: 1px solid rgb(190, 190, 190);
+    
     padding-right: 6rem;
+}
+
+.border-right{
+    border-right: 1px solid rgb(190, 190, 190);
 }
 
 .item-con{
