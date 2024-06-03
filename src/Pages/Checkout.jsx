@@ -62,10 +62,10 @@ const Checkout = ({ cartItem, setCartItem }) => {
       }
   })
 
-     axios.post('http://localhost:5001/create-checkout-session', { lineItems })
+  const { data } = await axios.post('http://localhost:5001/create-checkout-session', { lineItems })
 
     const stripe = await getStripe();
-    const { error } = await stripe.redirectToCheckout(checkoutOptions);
+    await stripe.redirectToCheckout({sessionId: data.id});
     console.log("Stripe checkout error", error);
 
     if (error) setStripeError(error.message);
