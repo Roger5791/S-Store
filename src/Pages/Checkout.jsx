@@ -49,7 +49,7 @@ const Checkout = ({ cartItem, setCartItem }) => {
     setLoading(true);
     console.log("redirectToCheckout");
 
-    axios.post(`http://localhost:5001/create-checkout-session`, {
+    axios.post(`${url}/create-checkout-session`, {
       cartItem,
     })
     .then((response) => {
