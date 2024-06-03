@@ -3,7 +3,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import "../CSS/Checkout.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 const Checkout = ({ cartItem, setCartItem }) => {
   const [orders, setOrders] = useState([]);
@@ -49,27 +48,12 @@ const Checkout = ({ cartItem, setCartItem }) => {
     setLoading(true);
     console.log("redirectToCheckout");
 
-    const lineItems = cartItem.map((item) => {
-      return {
-          price_data: {
-              currency: 'usd',
-              product_data: {
-                  name: item.name
-              },
-              unit_amount: item.price * 100 // because stripe interprets price in cents
-          },
-          quantity: item.quantity
-      }
-  })
-
-  const { data } = await axios.post('http://localhost:5001/create-checkout-session', { lineItems })
-
     const stripe = await getStripe();
-    await stripe.redirectToCheckout({sessionId: data.id});
-    console.log("Stripe checkout error");
+    const { error } = await stripe.redirectToCheckout(checkoutOptions);
+    console.log("Stripe checkout error", error);
 
-   /*  if (error) setStripeError(error.message);
-    setLoading(false); */
+    if (error) setStripeError(error.message);
+    setLoading(false);
   };
 
   if (stripeError) alert(stripeError);
@@ -237,7 +221,10 @@ const Checkout = ({ cartItem, setCartItem }) => {
               <label className="payment-label">PayPal</label>
             </div>
           </div>
-         
+          <form
+            action="http://localhost:5001/create-checkout-session"
+            method="POST"
+          >
             <button
               type="submit"
               className="checkout-btn"
@@ -246,7 +233,7 @@ const Checkout = ({ cartItem, setCartItem }) => {
             >
               Place Order
             </button>
-       
+          </form>
         </div>
       </div>
     </section>

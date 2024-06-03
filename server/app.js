@@ -8,7 +8,38 @@ const stripe = require('stripe')('sk_test_51OxW2uSJ3iiAvjLzwlW7FuR4SaeI1GNWUmkoe
 
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
-    line_items: req.body.lineItems,
+    line_items: [
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'Rebel Red T-Shirt',
+          },
+          unit_amount: 15680,
+        },
+        quantity: 1,
+      },
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'Floral Printed Top',
+          },
+          unit_amount: 26380,
+        },
+        quantity: 1,
+      },
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'Demon Leather Jacket',
+          },
+          unit_amount: 38569,
+        },
+        quantity: 1,
+      },
+    ],
     mode: 'payment',
     success_url: 'http://localhost:5000/success',
     cancel_url: 'http://localhost:5000/cancel',
