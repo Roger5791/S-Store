@@ -3,6 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import "../CSS/Checkout.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Checkout = ({ cartItem, setCartItem }) => {
   const [orders, setOrders] = useState([]);
@@ -20,9 +21,6 @@ const Checkout = ({ cartItem, setCartItem }) => {
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
-
-  const lineItems = cartItem
-  console.log(lineItems)
 
   const checkoutOptions = {
     line_items: [
@@ -51,6 +49,21 @@ const Checkout = ({ cartItem, setCartItem }) => {
     setLoading(true);
     console.log("redirectToCheckout");
 
+    const lineItems = cartItem.map((item) => {
+      return {
+          price_data: {
+              currency: 'usd',
+              product_data: {
+                  name: item.name
+              },
+              unit_amount: item.price * 100 // because stripe interprets price in cents
+          },
+          quantity: item.quantity
+      }
+  })
+
+     axios.post('http://localhost:5001/create-checkout-session', { lineItems })
+
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout(checkoutOptions);
     console.log("Stripe checkout error", error);
@@ -61,23 +74,14 @@ const Checkout = ({ cartItem, setCartItem }) => {
 
   if (stripeError) alert(stripeError);
 
-  const navigate = useNavigate();
+
   function wait(time) {
     return new Promise((resolve) => {
       setTimeout(resolve, time);
     });
   }
 
-  /*  const handleOrder = (item) => {
-      
-        setOrders([...cartItem]);
-        toast.success('Order Placed');
-        localStorage.setItem("Orders", JSON.stringify([...cartItem]));
-        setCartItem([])
-        localStorage.removeItem("cartItems", JSON.stringify(cartItem))
-        navigate('/')
-    }
-       */
+  
 
   const getOrders = () => {
     const FetchedWishtItems = localStorage.getItem("Orders");
@@ -233,10 +237,7 @@ const Checkout = ({ cartItem, setCartItem }) => {
               <label className="payment-label">PayPal</label>
             </div>
           </div>
-          <form
-            action="http://localhost:5001/create-checkout-session"
-            method="POST"
-          >
+         
             <button
               type="submit"
               className="checkout-btn"
@@ -245,7 +246,7 @@ const Checkout = ({ cartItem, setCartItem }) => {
             >
               Place Order
             </button>
-          </form>
+       
         </div>
       </div>
     </section>
