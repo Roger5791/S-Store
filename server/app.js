@@ -10,33 +10,15 @@ app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
-        price_data: {
-          currency: 'usd',
-          product_data: {
-            name: 'Rebel Red T-Shirt',
-          },
-          unit_amount: 15680,
-        },
+        price: "price_1PNaLvSJ3iiAvjLzSA9vnWxb",
         quantity: 1,
       },
       {
-        price_data: {
-          currency: 'usd',
-          product_data: {
-            name: 'Floral Printed Top',
-          },
-          unit_amount: 26380,
-        },
+        price: "price_1PKyKlSJ3iiAvjLzN06sw3EP",
         quantity: 1,
       },
       {
-        price_data: {
-          currency: 'usd',
-          product_data: {
-            name: 'Demon Leather Jacket',
-          },
-          unit_amount: 38569,
-        },
+        price: "price_1PNaL0SJ3iiAvjLzKdFf6ESG",
         quantity: 1,
       },
     ],
